@@ -1,18 +1,23 @@
 # TD 20250930 - Universal gravitational law
 
+## Inputs
+- Mass 1 [Kg]
+- Mass 2 [Kg]
+- Distance [m]
+
+## Outputs
+- Force [N]
+
+
 ## Specs
 - insert input data such as mass of the 2 objects and their distance,
-- check that the input values are valid
+- check if the input values are valid
 - calc the gravitatinal force between the 2 objects
 - display the calculated value on the screen
 
-## Analysis
-
-Choice for design:
-
-the user enters the masses in kg and the distance in mr.
+## Design
+the user enters the masses in kg and the distance in m.
 the calculated force is in N.
-
 The display will be in scientific format with 2 digits after the decimal point (example: +1.98e+20)
 
 Inputs

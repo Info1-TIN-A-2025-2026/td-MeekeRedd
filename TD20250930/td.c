@@ -51,7 +51,7 @@ int main(int argc, const char *argv[])
 			else
 			{
 				force = G * (massObj1 * massObj2) / (distance * distance);
-				printf("%02u:%02u:%02u\n", force); // %02u = two digits format with zero fill
+				printf("%.10e\n", "Force [N]:", force); // %10e = scientific notation format
 			}
 		}
 	}
