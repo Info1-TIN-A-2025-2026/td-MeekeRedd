@@ -23,7 +23,7 @@ int main(int argc, const char *argv[])
 	double force = 0;
 
 	printf("Mass first object (Kg):\n"); // print on screen
-	scanf("%lp", &massObj1);			 // read value from keyboard
+	scanf("%lf", &massObj1);			 // read value from keyboard
 
 	if (massObj1 < 0)
 	{
@@ -32,7 +32,7 @@ int main(int argc, const char *argv[])
 	else
 	{
 		printf("Enter Mass second object (Kg):\n"); // print on screen
-		scanf("%lp", &massObj2);					// read value from keyboard
+		scanf("%lf", &massObj2);					// read value from keyboard
 
 		if (massObj2 < 0)
 		{
@@ -42,7 +42,7 @@ int main(int argc, const char *argv[])
 		else
 		{
 			printf("Enter Distace between the objects (m):\n"); // print on screen
-			scanf("%lp", &distance);							// read value from keyboard
+			scanf("%lf", &distance);							// read value from keyboard
 
 			if (distance < 0)
 			{
@@ -51,7 +51,8 @@ int main(int argc, const char *argv[])
 			else
 			{
 				force = G * (massObj1 * massObj2) / (distance * distance);
-				printf("%.10e\n", "Force [N]:", force); // %10e = scientific notation format
+				// printf("%ld", force);
+				printf("%.2e\n", force); // %10e = scientific notation format
 			}
 		}
 	}
