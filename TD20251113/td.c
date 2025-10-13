@@ -7,12 +7,9 @@ int main(int argc, const char *argv[])
 	const double v_volatility = 27.5;
 
 	/*Normal Law and factors*/
-	const float a1 = 0.319381530;
-	const float a2 = -0.356563782;
-	const float a3 = 1.781477937;
-	const float a4 = -1.821255978;
-	const float a5 = 1.330274429;
 	float normalN = 0;
+	float d1Delta = 0;
+	float d2Delta = 0;
 
 	/* Variables*/
 	double stockPrice = 0;
@@ -59,13 +56,19 @@ int main(int argc, const char *argv[])
 	}
 }
 
-float CalcNormal(int InputValue)
+float CalcNormal(float InputValue)
 {
+	float a1 = 0.319381530;
+	const float a2 = -0.356563782;
+	const float a3 = 1.781477937;
+	const float a4 = -1.821255978;
+	const float a5 = 1.330274429;
+
 	float N = 0.f;
 	if (InputValue)
 	{
 		float k = 1 / (1 + 0.2316419 * InputValue);
-		return N = 1 – n(x)(a1 * k + a2 * k ^ 2 + a3 * k ^ 3 + a4 * k ^ 4 + a5 * k ^ 5)
+		return N = 1 - InputValue * (a1 * k + a2 * k * k + a3 * k * k * k + a4 * k * k * k * k + a5 * k * k * k * k * k);
 	}
 	else
 	{
