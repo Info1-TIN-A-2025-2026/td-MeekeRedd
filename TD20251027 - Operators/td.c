@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(int argc, const char *argv[])
 {
@@ -28,6 +29,28 @@ int main(int argc, const char *argv[])
 	char x = 127;
 	x++; // risk of overflow (x = -128)
 
-	
+	const unsigned int index = 2;
+	const unsigned int cycles = 100;
+
+	unsigned int i = 0;
+
+	for (i = index; i <= cycles; i++)
+	{
+		bool is_prime = true;
+
+		unsigned int j = 0;
+		for (j = index; j < i - 1; j++)
+		{
+			if ((i % j) == 0)
+			{
+				is_prime = false;
+			}
+		}
+
+		if (is_prime)
+		{
+			printf("%u ", i);
+		}
+	}
 	return 0;
 }
