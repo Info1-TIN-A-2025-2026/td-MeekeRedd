@@ -25,7 +25,7 @@ int main(int argc, const char *argv[])
 	printf(" t        pA(m)    vA(m/s)        pB(m)    vB(m/s)     ecart(m)\n");
 	for (int i = 0; i < intervalSet; i++)
 	{
-		printf("%u %5.1f %5.2f %5.1f %5.2f %5.1f\n", i, distaceTrainA, speedTrainA, distaceTrainB, speedTrainB, deltaDistance);
+		printf("%2d %10.1f %10.2f %12.1f %10.2f %10.1f\n", i, distaceTrainA, speedTrainA, distaceTrainB, speedTrainB, deltaDistance);
 	}
 
 	return 0;
