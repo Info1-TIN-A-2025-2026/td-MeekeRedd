@@ -6,7 +6,7 @@
 #define MIN_VALUE (-100)
 #define MAX_VALUE (100)
 
-#define 
+#define NUM_CANDIDATE 93
 
 int main(int argc, const char *argv[])
 {
@@ -27,7 +27,7 @@ int main(int argc, const char *argv[])
 
 	for (unsigned long i = 0; i < NUM_CELLS; i++)
 	{
-		if (n[i] == 93)
+		if (NUM_CANDIDATE == n[i])
 		{
 			printf("index%ld\n", n[i]);
 			break;
