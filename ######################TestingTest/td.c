@@ -8,7 +8,7 @@ int main(int argc, const char *argv[])
 	return 0;
 }
 
-int test(const int n)
+int test(const int n) // find perfect numbers
 {
 	int sum = 0;
 
