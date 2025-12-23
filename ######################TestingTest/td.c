@@ -73,6 +73,11 @@ int test3(const char *str) // count number of vowels
 
 int test(const int n) //find prime numbers
 {
+	if (n<=1)
+	{
+		return 0;
+	}
+	
 	int divisors = 0;
 	for (int i = 2; i <= n; i++)
 	{
