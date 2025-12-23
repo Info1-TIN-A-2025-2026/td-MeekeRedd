@@ -3,12 +3,13 @@
 
 
 int test2(const int n);
-int test(const char *str);
+int test3(const char *str);
+int test(const int n);
 
 int main(int argc, const char *argv[])
 {
-	//test(12);
-	test("prerfasdeokinbvgtedoesirefa");
+	int div = test(7);
+	printf("return %d\n", div);
 	return 0;
 }
 
@@ -36,7 +37,7 @@ int test2(const int n) // find perfect numbers
 	return 0;
 }
 
-int test(const char *str)
+int test3(const char *str) // count number of vowels
 {
 
 	char vowels[10] = {'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'};
@@ -68,4 +69,24 @@ int test(const char *str)
 
 	//printf("amount = %d\n", amount);
 	return amount;
+}
+
+int test(const int n) //find prime numbers
+{
+	int divisors = 0;
+	for (int i = 2; i <= n; i++)
+	{
+		if ((n % i) == 0)
+		{
+			divisors++;
+		}
+	}
+
+	if (divisors == 1)
+	{
+		return 1;
+	}
+	
+	return 0;
+	
 }
