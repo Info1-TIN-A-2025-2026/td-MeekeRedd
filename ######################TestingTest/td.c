@@ -5,11 +5,79 @@
 int test2(const int n);
 int test3(const char *str);
 int test(const int n);
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+unsigned long max_length_high(const char *signal, const unsigned long num_samples) {
+    unsigned long counter = 0;
+    unsigned long currentchain = 0;
+    unsigned long prevChain = 0;
+    for( int i = 0; i < num_samples; i++ )
+    {
+        if (signal[i] == '1')
+            {
+                currentchain++;
+                if(currentchain > prevChain)
+                {
+                    counter++;
+                    prevChain = currentchain;
+                }
+            }
+        else{
+            currentchain = 0;
+        }
+    }
+    return counter;
+}
+
+unsigned long max_length_low(const char *signal, const unsigned long num_samples) {
+    unsigned long counter = 0;
+    unsigned long currentchain = 0;
+    unsigned long prevChain = 0;
+    for( int i = 0; i < num_samples; i++ )
+    {
+        if (signal[i] == '0')
+            {
+                currentchain++;
+                if(currentchain > prevChain)
+                {
+                    counter++;
+                    prevChain = currentchain;
+                }
+            }
+        else{
+            currentchain = 0;
+        }
+    }
+    return counter;
+}
+
+unsigned long count_rising_edge(const char *signal, const unsigned long num_samples) {
+    unsigned long counter = 0;
+    bool isRiseEdge = false;
+
+    for( int i = 0; i < num_samples; i++ )
+    {
+        if (signal[i] == '1' && !isRiseEdge)
+            {
+                counter++;
+                isRiseEdge = true;
+            }
+        else if(signal[i]== '0')
+		{
+            isRiseEdge = false;
+        }
+    }
+    return counter;
+}
 
 int main(int argc, const char *argv[])
 {
-	int div = test(7);
-	printf("return %d\n", div);
+	char s[] = "111010101011001010101011011111010101001010101111111110000000000000000111111111111111111111111000";
+	int max = max_length_low(s, sizeof(s));
+	printf("%d\n", max);
 	return 0;
 }
 

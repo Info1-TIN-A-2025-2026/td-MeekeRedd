@@ -5,7 +5,7 @@ void display(char *t);
 
 int main(int argc, const char *argv[])
 {
-	char s1[] = "tx kjkt";
+	char s1[] = "tx kopojkljkt";
 
 	printf("memory size: %ld\n", sizeof(s1));
 	printf("num cell: %ld\n", sizeof(s1)/ sizeof(char));
